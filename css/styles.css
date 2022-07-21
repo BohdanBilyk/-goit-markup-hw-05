@@ -12,6 +12,7 @@
   --color-link-footer: rgba(255, 255, 255, 0.6);
   --color-icon: #afb1b8;
   --color-icon-footer: rgba(255, 255, 255, 0.1);
+  --color-back-fone: rgba(47, 48, 58, 0.8);
 }
 
 body {
@@ -40,10 +41,10 @@ p {
   margin-top: 0;
 }
 /* Класс для обнуления свойств у сылок */
-/* a {
+a {
   text-decoration: none;
   color: inherit;
-} */
+}
 /* Класс для обнуления базовых свойств у списков (ul) */
 .list {
   list-style: none;
@@ -103,12 +104,37 @@ address {
   margin-right: 40px;
 }
 
+.current.navigation {
+  position: relative;
+  color: var(--color-accent);
+}
+
+.current.navigation::after {
+  content: '';
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--color-accent);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
 .navigation {
   padding-top: 32px;
   padding-bottom: 32px;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .navigation:hover,
 :focus {
+  color: var(--color-accent);
+}
+
+.current {
   color: var(--color-accent);
 }
 
@@ -119,12 +145,7 @@ address {
   font-size: 26px;
   line-height: 1.2;
   letter-spacing: 0.03em;
-  text-decoration: none;
   margin-right: 94px;
-}
-
-.current {
-  color: var(--color-accent);
 }
 
 .logoweb {
@@ -133,7 +154,6 @@ address {
   font-weight: 700;
   font-size: 26px;
   line-height: 1.2;
-  text-decoration: none;
 }
 
 .list-contact .item:not(:last-child) {
@@ -154,6 +174,10 @@ address {
   padding-bottom: 32px;
   letter-spacing: 0.02em;
   color: var(--color-contact);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-gray:hover,
@@ -234,19 +258,24 @@ address {
   border: 0px;
   display: flex;
   letter-spacing: 0.06em;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:hover,
 .button:focus {
-  background-color: var(--color-accent);
-  color: var(--color-wite);
+  background-color: var(--color-text);
+  color: var(--color-button);
 }
 
 .button:active {
-  background-color: var(--color-wite);
+  background-color: var(--color-text);
 }
 
-/* преимущества */
+/* Преимущества / Секция что делаем */
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -267,6 +296,30 @@ address {
   margin: 0;
   display: flex;
 }
+
+.back-fone {
+  position: relative;
+ 
+}
+
+.text-fone {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  color: var(--color-wite);
+  background-color: var(--color-back-fone);
+
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+
 
 .advantage-site {
   display: flex;
@@ -406,6 +459,9 @@ address {
   border-radius: 50%;
   fill: var(--color-icon);
 
+  transition-property: background-color, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-svg {
   width: 44px;
@@ -422,10 +478,6 @@ address {
   background-color: var(--color-accent);
   fill: var(--color-wite);
 }
-
-
-
-
 
 /* секция сылок на сайты клиентов*/
 
@@ -450,6 +502,10 @@ address {
   border: 1px solid #afb1b8;
   border-radius: 4px;
   color: var(--color-icon);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-icon {
   width: 106px;
@@ -521,6 +577,15 @@ address {
   line-height: 1.7;
   letter-spacing: 0.03em;
   text-decoration: none;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link-footer:hover,
+:focus {
+  color: var(--color-accent);
 }
 
 .list-footer .footer-li + .footer-li {
@@ -564,6 +629,10 @@ address {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-footer:hover {
   background-color: var(--color-accent);
@@ -605,6 +674,10 @@ address {
   line-height: 1.8;
   letter-spacing: 0.03em;
   padding: 6px 22px 6px 22px;
+
+  transition-property: background-color, color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .list-nav .button-menu:not(:last-child) {
@@ -656,7 +729,9 @@ address {
   letter-spacing: 0.06em;
   color: var(--color-text);
 }
-
+.img-item {
+  position: relative;
+}
 .img-item {
   border: 1px solid var(--color-li-portfolio);
 }
@@ -675,16 +750,50 @@ address {
 .border-shadow {
   display: block;
   text-decoration: none;
+
+
 }
 
 .border-shadow:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
   1px 4px 6px rgba(0, 0, 0, 0.16);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .border-shadow:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
   1px 4px 6px rgba(0, 0, 0, 0.16);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.border-shadow:hover .card-shadow {
+  display: block;
+  transform: translate(0, -100%);
+ 
+
+
+}
+
+.card-shadow {
+  position: absolute;
+  left: 0;
+  background-color: rgba(33, 150, 243, 0.9);
+  display: none;
+ 
+}
+
+
+.card-text {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--color-wite);
+  letter-spacing: 0.03em;
+  padding: 63px 24px;
+  margin-bottom: 0;
+  
+  
 }
 
 .benefits {
@@ -702,7 +811,46 @@ address {
   letter-spacing: 00.03em;
 }
 
-.link-footer:hover,
-:focus {
-  color: var(--color-accent);
+
+.backdrop {
+position: fixed;
+width: 100%;
+height: 100%;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+
+background: rgba(0, 0, 0, 0.2);
+}
+.backdrop.is-hidden {
+visibility: hidden;
+opacity: 0;
+pointer-events: none;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  min-width: 528px;
+  min-height: 581px;
+  
+  background:var(--color-wite);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.button-modal {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: var(--color-wite);
+}
+
+.close {
+
 }
