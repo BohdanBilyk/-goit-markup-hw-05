@@ -720,6 +720,8 @@ address {
   padding-bottom: 20px;
   padding-left: 24px;
   padding-right: 24px;
+  position: relative;
+  overflow: hidden;
 }
 
 .title-portfolio {
@@ -731,6 +733,7 @@ address {
 }
 .img-item {
   position: relative;
+  overflow: hidden;
 }
 .img-item {
   border: 1px solid var(--color-li-portfolio);
@@ -747,12 +750,6 @@ address {
   margin-bottom: 30px;
 }
 
-.border-shadow {
-  display: block;
-  text-decoration: none;
-
-
-}
 
 .border-shadow:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
@@ -769,21 +766,14 @@ address {
 }
 
 .border-shadow:hover .card-shadow {
-  display: block;
   transform: translate(0, -100%);
- 
-
-
 }
 
 .card-shadow {
   position: absolute;
-  left: 0;
   background-color: rgba(33, 150, 243, 0.9);
-  display: none;
- 
+  transition:250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 
 .card-text {
   font-size: 18px;
@@ -792,7 +782,6 @@ address {
   letter-spacing: 0.03em;
   padding: 63px 24px;
   margin-bottom: 0;
-  
   
 }
 
